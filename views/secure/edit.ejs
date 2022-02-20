@@ -1,0 +1,80 @@
+<body>
+    <% include ../partials/commons.ejs %> <% include ../partials/header.ejs %>
+    <!-- Page Content -->
+  
+    <section class="section gray-bg py-5" style="min-height: 500px">
+      <div class="container">
+        <a href="../users/signout" class="btn btn-dark" style="float: right">
+          Sign Out
+        </a>
+        <h3>Edit Contact List</h3>
+        <div class="offset-md-3 col-md-6">
+          <form class="form" method="POST">
+            <div class="form-group">
+              <input type="hidden" name="id" value="<%= item._id %>" />
+              <label for="contactName">Contact Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="contactName"
+                placeholder="Enter Contact Name"
+                name="contactName"
+                value="<%= item.contactName %>"
+                required
+              />
+            </div>
+            <br />
+            <div class="form-group">
+              <input type="hidden" name="id" value="<%= item._id %>" />
+              <label for="contactNumber">Contact Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="contactNumber"
+                placeholder="Enter Contact Number"
+                name="contactNumber"
+                value="<%= item.contactNumber %>"
+                required
+              />
+            </div>
+            <br />
+            <div class="form-group">
+              <input type="hidden" name="id" value="<%= item._id %>" />
+              <label for="contactEmail">Contact Email</label>
+              <input
+                type="text"
+                class="form-control"
+                id="contactEmail"
+                placeholder="Enter Contact Email"
+                name="contactEmail"
+                value="<%= item.contactEmail %>"
+                required
+              />
+            </div>
+            <br />
+            <div class="row">
+              <button class="btn btn-primary offset-md-3 col-md-2" type="submit">
+                Submit
+              </button>
+              &nbsp;&nbsp;&nbsp;
+              <a href="/secure/contactlist" class="btn btn-warning col-md-2">
+                Cancel
+              </a>
+              &nbsp;&nbsp;&nbsp;
+              <a
+                href="/secure/delete/<%= item._id %>"
+                class="btn btn-danger col-md-2"
+              >
+                Delete
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  
+    <% include ../partials/footer.ejs %>
+  </body>
+  <script>
+    document.getElementById("m-signin-btn").style.visibility = "hidden";
+  </script>

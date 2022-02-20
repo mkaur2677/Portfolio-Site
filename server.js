@@ -2,12 +2,14 @@
 
 
 //Dependencies
+var dbConfig = require("./config/db");
 var app = require('./config/app');
 var debug = require('debug')('assignment1:server');
 var http = require('http');
 
 
 //Gets port from the environment and store in Express.
+let db = dbConfig();
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
